@@ -1,0 +1,61 @@
+alias ll='ls -lhFG'
+alias dir='ll'
+
+alias r="mv \!* ~/.Trash"
+
+alias gemlist='gem list | egrep -v "^( | $)"'
+
+alias h='history'
+
+alias lc='wc -l'
+alias header='head -1'
+
+alias c='clear'
+alias cl='clear; ls'
+
+alias take='mkdir \!* && \!*'
+
+alias e='exit'
+
+alias k9='killall -9'
+
+alias o='open . &'
+alias ff='open -a Firefox'
+
+alias rii='ru -Tf ansi'
+
+alias tu='top -o cpu'
+alias tm='top -o vsize'
+
+# Git Aliases
+alias gst='git status'
+alias gp='git push'
+alias gd='git diff | mate'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gitdiff='git log|grep commit|cut -d " " -f2|head -n 2|xargs -n 2 git diff -R|mate'
+
+alias dsunhook="find . -name '.DS_Store' -exec rm -rf {} \;"
+
+alias et='mate . &'
+
+alias rss='thin start'
+alias rc='rails c'
+alias rg='rails g'
+alias rdbm='rake db:migrate'
+alias rr='rake routes'
+
+alias eq='rvm use @eq && gem update earthquake && earthquake && rvm use'
+
+alias csvh=csv_header
+
+alias knssh="knife ssh $* -a ec2.public_hostname"
+
+csv_header()
+{
+  local SEP=$2
+  [ -z "$SEP"]  && SEP=",";
+  head -1 $1 | perl -i -p -e "s/\\$(echo $SEP)/\n/g" | nl
+}

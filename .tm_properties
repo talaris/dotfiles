@@ -1,0 +1,47 @@
+excludeInFileChooser = "{$exclude,*.xib,*gitkeep}"
+TM_RUBY              = "/Users/kyle/.rvm/bin/textmate_ruby"
+TM_FULLNAME          = "Kyle Burckhard"
+TM_ORGANIZATION      = "VorpalCode"
+
+[ *.txt ]
+softWrap         = true
+
+[ .git/COMMIT_EDITMSG ]
+softWrap         = true
+spellChecking    = true
+spellingLanguage = 'en'
+
+[ text ]
+softWrap            = false
+wrapColumn          = 80
+softTabs            = true
+tabSize             = 2
+
+[ text.plain ]
+softWrap            = true
+wrapColumn          = "Use Window Frame"
+softTabs            = false
+tabSize             = 4
+
+[ source ]
+softWrap            = false
+wrapColumn          = 80
+softTabs            = true
+tabSize             = 2
+
+
+[ *.rb ]
+fileType            = 'source.ruby'
+
+[ "*/app/*/rb" ]
+fileType            = 'source.ruby.rails'
+
+[ *.feature ]
+fileType            = 'text.gherkin.feature'
+
+[ "step_definitions/*_steps.rb" "step_definitions/**/*_steps.rb" ]
+fileType            = 'source.ruby.rspec.cucumber.steps'
+
+[ "*_spec.rb" ]
+fileType            = 'source.ruby.rspec'
+

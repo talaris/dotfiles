@@ -1,0 +1,13 @@
+# ~/.tmuxinator/wiki.yml
+# you can make as many tabs as you wish...
+
+project_name: WikiImport
+project_root: ~/Marketfish/svn2github/gollum-import-trac_importer
+rvm: ruby-1.9.2@github-migrate
+tabs:
+  - main:
+    layout: even-vertical
+    panes:
+      - guard
+      - github; git sh		  
+  - shell: mate .

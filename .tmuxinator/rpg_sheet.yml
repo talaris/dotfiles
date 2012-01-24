@@ -1,0 +1,12 @@
+# ~/.tmuxinator/rpg_sheet.yml
+# you can make as many tabs as you wish...
+
+project_name: rpg_sheet
+project_root: ~/Projects/rpg_sheet
+rvm: 1.9.2@sheets
+# pre: sudo /etc/rc.d/mysqld start
+tabs:
+  - tests: guard
+  - irb: mate . && irb
+  - git: git pull && git status && gitx
+

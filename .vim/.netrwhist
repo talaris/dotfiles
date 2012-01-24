@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/kyle/Dropbox/Projects/listops_dashboard/db'
+let g:netrw_dirhist_2='/Users/kyle/Dropbox/Projects/listops_dashboard/db/migrate'
+let g:netrw_dirhist_3='/Users/kyle/Dropbox/Projects/listops_dashboard'

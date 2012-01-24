@@ -1,0 +1,16 @@
+# ~/.tmuxinator/ops_db.yml
+# you can make as many tabs as you wish...
+
+project_name: ops_db
+project_root: ~/Marketfish/ops_db
+rvm: 1.9.3@rails313
+tabs:
+  - editor:
+      layout: main-vertical
+      panes:
+        - mate .; guard
+        - 
+  - git: git reup; gitx
+  - logs: tail -f log/development.log
+  - console: rails c
+  - foreman: foreman start
