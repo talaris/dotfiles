@@ -28,7 +28,7 @@ task :default => :install
 
 desc "install the dot files into user's home directory"
 task :install do
-  Dir.foreach('.') do |file|
+  Dir.glob('**/*', File::FNM_DOTMATCH ).reject { |f| File.directory?(f) || f =~ /\.git/ }.each do |file|
     next if %w[. .. Rakefile README LICENSE].include? file
     next if FileTest.symlink?( File.join(ENV['HOME'], file) )
 
@@ -38,21 +38,10 @@ end
 
 def process_file(file)
   @replace_all = false
+  
+  dir = File.dirname( file )
+  system %Q{mkdir -p ~/#{dir}/ } unless dir == '.'
 
-  if File.directory?(file)
-    system %{mkdir -p "$HOME/#{file}"}
-    Dir.foreach("#{file}/") do |sub_file|
-      next if %w[. .. Rakefile README LICENSE].include? file
-      next if FileTest.symlink?( File.join(ENV['HOME'], file) )
-
-      process_file( sub_file )
-    end
-  else
-    handle_file(file)
-  end
-end
-
-def handle_file(file)
   # handle normal dotfiles
   if File.exist?(File.join(ENV['HOME'], file))
     if @replace_all
