@@ -47,7 +47,7 @@ alias rg='rails g'
 alias rdbm='rake db:migrate'
 alias rr='rake routes'
 
-alias eq='rvm use @eq && gem update earthquake && earthquake && rvm use'
+alias eq='rvm use 1.9.3@eq && gem update earthquake && earthquake; rvm use'
 
 alias csvh=csv_header
 
