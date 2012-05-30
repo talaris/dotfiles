@@ -36,6 +36,9 @@ setopt menucomplete
 autoload -U compinit
 compinit
 
+# enable colored output from ls, etc
+export CLICOLOR=1
+
 setopt auto_cd
 cdpath=($HOME/Marketfish $HOME/Dropbox/Projects)
 
@@ -56,3 +59,6 @@ zstyle -e :urlglobber url-other-schema \
 '[[ $words[1] == scp ]] && reply=("*") || reply=(http https ftp)'
 
 setopt NO_NOMATCH
+
+# RVM
+[[ -s '/Users/kyle/.rvm/scripts/rvm' ]] && source '/Users/kyle/.rvm/scripts/rvm'

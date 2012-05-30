@@ -8,6 +8,7 @@ alias gemlist='gem list | egrep -v "^( | $)"'
 alias h='history'
 
 alias lc='wc -l'
+alias -g L='| wc -l'
 alias header='head -1'
 
 alias c='clear'
@@ -52,6 +53,9 @@ alias eq='rvm use 1.9.3@eq && gem update earthquake && earthquake; rvm use'
 alias csvh=csv_header
 
 alias knssh="knife ssh $* -a ec2.public_hostname"
+
+# Network
+alias whats-my-ip="curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+'"
 
 csv_header()
 {
