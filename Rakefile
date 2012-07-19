@@ -29,7 +29,7 @@ task :default => :install
 desc "install the dot files into user's home directory"
 task :install do
   Dir.foreach('.') do |file|
-    next if %w[. .. Rakefile README LICENSE].include? file
+    next if %w[. .. Rakefile README LICENSE .git].include? file
     next if FileTest.symlink?( File.join(ENV['HOME'], file) )
 
     process_file(file)

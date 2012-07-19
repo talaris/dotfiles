@@ -49,13 +49,7 @@ alias rr='rake routes'
 
 alias eq='rvm use @eq && gem update earthquake && earthquake && rvm use'
 
-alias csvh=csv_header
-
 alias knssh="knife ssh $* -a ec2.public_hostname"
-
-csv_header()
-{
-  local SEP=$2
-  [ -z "$SEP"]  && SEP=",";
-  head -1 $1 | perl -i -p -e "s/\\$(echo $SEP)/\n/g" | nl
-}
+unalias md
+md() { nocorrect mkdir -p "$*" && cd "$*"; }
+alias mdd='md `date +%F`'

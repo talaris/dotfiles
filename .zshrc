@@ -2,10 +2,10 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="mojo"
 
-plugins=( brew bundler gem git git-flow git-wtf history-substring-search knife osx rails3 rvm textmate tmuxinator )
+plugins=( brew gem git git-flow git-wtf history-substring-search knife rails3 rvm tmuxinator )
 
 # Customize to your needs...
-export PATH=~/bin:~/Library/bin:/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/X11/bin
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/data/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
@@ -29,15 +29,7 @@ setopt prompt_subst
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
 
-# Show completion on first TAB
-setopt menucomplete
-
-# completion
-autoload -U compinit
-compinit
-
 setopt auto_cd
-cdpath=($HOME/Marketfish $HOME/Dropbox/Projects)
 
 setopt prompt_subst # expand functions in the prompt
 setopt histignoredups # ignore duplicate history entries
@@ -56,3 +48,4 @@ zstyle -e :urlglobber url-other-schema \
 '[[ $words[1] == scp ]] && reply=("*") || reply=(http https ftp)'
 
 setopt NO_NOMATCH
+DISABLE_AUTO_TITLE=true
