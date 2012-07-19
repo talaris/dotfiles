@@ -8,6 +8,7 @@ alias gemlist='gem list | egrep -v "^( | $)"'
 alias h='history'
 
 alias lc='wc -l'
+alias -g L='| wc -l'
 alias header='head -1'
 
 alias c='clear'
@@ -47,9 +48,13 @@ alias rg='rails g'
 alias rdbm='rake db:migrate'
 alias rr='rake routes'
 
-alias eq='rvm use @eq && gem update earthquake && earthquake && rvm use'
+alias eq='rvm use 1.9.3@eq && gem update earthquake && earthquake; rvm use'
 
 alias knssh="knife ssh $* -a ec2.public_hostname"
+
 unalias md
 md() { nocorrect mkdir -p "$*" && cd "$*"; }
 alias mdd='md `date +%F`'
+
+# Network
+alias whats-my-ip="curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+'"

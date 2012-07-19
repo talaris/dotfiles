@@ -29,6 +29,13 @@ setopt prompt_subst
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
 
+# completion
+autoload -U compinit
+compinit
+
+# enable colored output from ls, etc
+export CLICOLOR=1
+
 setopt auto_cd
 
 setopt prompt_subst # expand functions in the prompt
@@ -49,3 +56,4 @@ zstyle -e :urlglobber url-other-schema \
 
 setopt NO_NOMATCH
 DISABLE_AUTO_TITLE=true
+
